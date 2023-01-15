@@ -20,5 +20,5 @@ const makeGalleryList = images
     return `<li><img src="${url}" alt="${alt}" width="300" height="200"></li>`;
   })
   .join("");
-
 galleryEl.insertAdjacentHTML("afterbegin", makeGalleryList);
+galleryEl.classList.add("ul-style");
