@@ -15,10 +15,9 @@ ref.input.addEventListener("input", (eventIn) => {
 ref.buttonElCreate.addEventListener("click", () => {
   createBoxes(amount);
 });
-
+let size = 30;
 function createBoxes(amountEl) {
   const boxes = [];
-  let size = 30;
   for (let i = 0; i < amountEl; i += 1) {
     const color = getRandomHexColor();
     const element = createBoxElement(size, color);
@@ -28,7 +27,9 @@ function createBoxes(amountEl) {
   ref.divEl.insertAdjacentHTML("beforeend", boxes.join(""));
 }
 function getRandomHexColor() {
-  return `#${Math.floor(Math.random() * 16777215).toString(16)}`;
+  return `#${Math.floor(Math.random() * 16777215)
+    .toString(16)
+    .padStart(6, 0)}`;
 }
 
 function removAllElements() {
